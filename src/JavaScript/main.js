@@ -1,4 +1,5 @@
 let HeadBar = document.getElementById('HeadBar')
+const other_services = document.getElementById('other_services')
 
 // Making hearbar visible and unvisible by scroll
 
@@ -31,6 +32,16 @@ const _tab = (e) => {
     let _title = e.currentTarget.getAttribute("data-title")
     console.log(_title);
     
+
+    // services part is not showed in tour page!
+    if(_title == "tour"){
+        other_services.classList.remove("opacity-100")
+        other_services.classList.add("opacity-0")
+        
+    }else{
+        other_services.classList.remove("opacity-0")
+        other_services.classList.add("opacity-100")        
+    }
 
     // reset buttons color
     _buttons.forEach((val) => {
